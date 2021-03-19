@@ -1,0 +1,30 @@
+@import "../../styles/Global.css";
+
+.__login-box {
+  margin-top: 10vh;
+  padding: 0 10vw;
+}
+
+.__reduceMarginBottom {
+  margin-bottom: -20px !important;
+}
+
+.__login-button {
+  margin-top: 30px;
+}
+
+.__forgot-password {
+  margin-top: 40px;
+}
+
+.__get-started {
+  margin-top: 25px;
+}
+
+.__link {
+  color: var(--secondary) !important;
+}
+
+.__link:hover {
+  color: var(--topsetPink) !important;
+}

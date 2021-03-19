@@ -1,0 +1,307 @@
+@import "../../styles/Global.css";
+
+.__heading-box {
+  margin-top: 7vh;
+  padding: 0 10vw;
+}
+
+.__reduceMarginBottom {
+  margin-bottom: -20px !important;
+}
+
+.__column-padding {
+  padding: 0 15vw;
+  height: 45vh;
+}
+
+.__btn-padding {
+  padding: 0 15vw;
+  /* max-width: 1500px !important; */
+}
+
+input {
+  max-width: 400px !important;
+}
+
+.__label {
+  text-align: left;
+  color: var(--topsetPink) !important;
+  margin-left: 30px;
+}
+.__label-success {
+  color: #10bf03 !important;
+}
+p {
+  font-size: 13px !important;
+  font-family: Poppins;
+  font-weight: 400 !important;
+}
+
+.__spinner {
+  animation: spin infinite 4s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+span {
+  font-size: 13px !important;
+  color: var(--purpleLight) !important;
+  font-family: Poppins;
+  font-weight: 400 !important;
+}
+
+.__marginTop-15 {
+  margin-top: -15px;
+}
+
+/* Avatar */
+.__username {
+  color: var(--secondary) !important;
+}
+
+.__avatar-box {
+  margin-top: 60px;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px 1px #ccc;
+  padding: 30px 20px 20px 20px;
+}
+
+.__card-name {
+  margin-top: 5px;
+  font-size: 22px !important;
+  color: var(--primary) !important;
+  font-family: Poppins;
+  font-weight: 600 !important;
+}
+
+.__card-stats {
+  margin-top: 5px;
+  font-size: 16px !important;
+  font-family: Poppins;
+  color: #fd9f27 !important;
+  font-weight: 600 !important;
+}
+
+.__vertical-divider {
+  color: #d1cdcd;
+}
+
+.__avatar-item {
+  max-width: 90px !important;
+  max-height: 90px !important;
+  cursor: pointer;
+  border-width: 2px !important;
+}
+
+.__avatar-collection {
+  width: 400px !important;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.__btn-margin {
+  margin-top: 30px;
+}
+
+.__btn-margin100 {
+  margin-top: 80px;
+}
+
+/* Subjects */
+
+.__subjects {
+  max-width: 550px;
+  margin-top: 70px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+/* Account */
+.__top-margin80 {
+  margin-top: 80px;
+}
+
+input {
+  padding: 0 20px !important;
+}
+
+.__my-form {
+  display: flex;
+  justify-content: center;
+}
+
+.__checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  padding: 0 30px;
+}
+
+.__checkbox {
+  border: 2px solid #c1afe5;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.selected__checkbox {
+  border: 2px solid #f25b9d;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #fae4ed;
+  background-image: url("https://topset.ng/wp-content/uploads/2021/03/pink-checkmark.svg");
+  background-position: center;
+  padding: 10px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+  cursor: pointer;
+}
+
+.__checkbox-text {
+  font-family: Poppins;
+  color: var(--primary) !important;
+  font-size: 13px !important;
+  margin: auto 0;
+}
+
+.__span {
+  color: var(--secondary) !important;
+  cursor: pointer;
+}
+
+.field {
+  margin-top: 10px;
+}
+.first-field {
+  margin-top: 30px;
+}
+
+.width150 {
+  width: 150px;
+}
+
+.__margin-bottom50 {
+  margin-bottom: 100p;
+}
+
+.__top-margin50 {
+  margin-top: 50px;
+}
+
+.__input-half-size {
+  width: 195px !important;
+}
+
+.__input-right {
+  margin-left: 5px;
+}
+
+.__input-left {
+  margin-right: 5px;
+}
+
+.__icon {
+  padding: 0 0 0 60px;
+  position: absolute;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  .__reverse-columns {
+    flex-direction: column-reverse;
+    display: flex;
+    align-items: stretch;
+  }
+  .__label {
+    text-align: center;
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .__column-padding {
+    padding: 30px 0vw;
+    height: 60vh;
+    /* max-width: 960px; */
+  }
+
+  .__icon {
+    padding: 0 0 0 0;
+    left: 50%;
+    top: 105px;
+  }
+
+  .__btn-padding {
+    padding: 0 10vw;
+  }
+
+  input {
+    max-width: 300px !important;
+  }
+
+  h3 {
+    margin-top: 40px !important;
+  }
+
+  .__avatar-collection {
+    width: auto !important;
+    margin-top: 60px;
+    padding: 0 0px;
+  }
+
+  .__avatar-item {
+    max-width: 80px !important;
+    max-height: 80px !important;
+  }
+
+  .__input-half-size {
+    width: 100% !important;
+  }
+
+  .__input-right {
+    margin-left: 0px;
+  }
+
+  .__input-left {
+    margin-right: 0px;
+  }
+
+  .__margin-top15 {
+    margin-top: 13px;
+  }
+
+  .__btn-margin100 {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .__column-padding {
+    padding: 30px 0vw;
+    height: 55vh;
+    /* max-width: 960px; */
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .__column-padding {
+    padding: 30px 0vw;
+    height: 70vh;
+    /* max-width: 960px; */
+  }
+}
