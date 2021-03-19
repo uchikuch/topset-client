@@ -6,7 +6,6 @@ let authorisation;
 
 class AuthService {
   handleAuthentication() {
-    console.log("handleAuthentication");
     const accessToken = this.getAccessToken();
 
     if (!accessToken) {
@@ -14,10 +13,6 @@ class AuthService {
     }
 
     if (this.isValidToken(accessToken)) {
-      console.log(
-        "this.isValidToken(accessToken): ",
-        this.isValidToken(accessToken)
-      );
       this.setSession(accessToken);
     } else {
       this.setSession(null);
@@ -26,7 +21,6 @@ class AuthService {
 
   loginInWithToken = () =>
     new Promise((resolve, reject) => {
-      console.log("loginInWithToken");
       axios
         .get(`${server.url}/loginWithToken/${authorisation}`)
         .then((response) => {

@@ -3,7 +3,6 @@ import "./SignUp.css";
 import { Formik } from "formik";
 import { FaCheck, FaExclamationTriangle, FaSpinner } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { IconContext } from "react-icons/lib";
 import * as Yup from "yup";
 import { Button } from "../../components/Button";
 import axios from "axios";
