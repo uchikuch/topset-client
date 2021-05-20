@@ -1,0 +1,231 @@
+.__main_container {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.margin_top20 {
+  margin-top: 20px;
+}
+
+.__padding20 {
+  padding: 20px;
+}
+
+.heading_box {
+  background-image: linear-gradient(
+    to bottom right,
+    var(--primary),
+    var(--primary)
+  );
+  min-height: 200px;
+  border-radius: 10px;
+}
+.__bold_white {
+  font-family: Poppins;
+  color: white !important;
+  font-size: 26px !important;
+  font-weight: 600;
+}
+
+/* .general_stats_box {
+  background-color: #6e559e;
+  min-height: 100px;
+  border-radius: 10px;
+} */
+
+.general_stats_box {
+  background-color: #f7f4fd;
+  min-height: 100px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px 1px var(--purpleLight);
+}
+
+.__padding_sid20 {
+  padding: 0 20px 0 20px;
+}
+
+.__paddingSide20 {
+  padding: 0 20px 0 20px;
+}
+
+.__whiteText {
+  color: #fff !important;
+}
+
+.__primaryText {
+  color: var(--primary) !important;
+  font-family: Poppins;
+}
+
+.__align_right {
+  text-align: right;
+  padding-right: 20px;
+}
+.__column_one {
+  display: flex;
+}
+
+.__stat_icon {
+  padding-right: 20px;
+}
+
+.__lessons_icon {
+  border: 2px solid var(--secondary);
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  background-color: var(--primary);
+  background-image: url("https://topset.ng/wp-content/uploads/2021/03/lessons_icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+}
+
+.__sections_icon {
+  border: 2px solid #fed12f;
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  background-color: var(--primary);
+  background-image: url("https://topset.ng/wp-content/uploads/2021/03/sections_icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+}
+
+.__topics_icon {
+  border: 2px solid #72bdba;
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  background-color: var(--primary);
+  background-image: url("https://topset.ng/wp-content/uploads/2021/03/white-topics.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+}
+
+.__stat_value {
+  display: flex;
+}
+
+.__lesson_circle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--secondary);
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.__section_circle {
+  width: 20px;
+  height: 20px;
+  background-color: #fed12f;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.__topic_circle {
+  width: 20px;
+  height: 20px;
+  background-color: #72bdba;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.__completed_value {
+  margin-left: 10px;
+  color: #fd9f27 !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.__completion_div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.__subject_stats_container {
+  margin-top: 35px;
+  padding: 0 10px !important;
+}
+
+.__subject_box {
+  background-color: white;
+  min-height: 200px;
+  border-radius: 10px;
+  max-width: 370px;
+  box-shadow: 1px 1px 2px 1px var(--purpleLight);
+  margin: 0 10px;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 20px !important;
+}
+
+.__subject_box:hover {
+  box-shadow: 1px 1px 5px 1px var(--purpleLight);
+}
+
+/* SUBJECT CARD */
+
+.__card_header {
+  background-color: #f7f4fd;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 50px;
+  font-family: Poppins;
+  color: var(--primary) !important;
+  font-size: 21px !important;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.__card_body {
+  padding: 20px !important;
+  text-align: center;
+  color: var(--primary) !important;
+  font-size: 16px !important;
+  margin-top: 10px;
+}
+
+.__continue {
+  font-family: Poppins;
+  color: var(--secondary) !important;
+  font-size: 22px !important;
+  margin-top: 10px;
+  font-weight: 600 !important;
+}
+
+.__main_card_container {
+  padding: 0 15px 0 15px;
+}
+
+.__xp {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.__xp_value {
+  margin-left: 5px;
+  color: #fd9f27 !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+}
+
+@media screen and (min-width: 1408px) {
+  .__subject_box {
+    max-width: 435px;
+  }
+}
+
+@media screen and (max-width: 1166) {
+  .__main_card_container {
+    padding: 0 20px 0 20px;
+  }
+  .__subject_box {
+    margin: 0 40px;
+  }
+}

@@ -1,7 +1,15 @@
 import React from "react";
 import "../styles/Button.css";
 
-const STYLES = ["btn--primary", "btn--outline", "btn--continue", "btn--back"];
+const STYLES = [
+  "btn--primary",
+  "btn--outline",
+  "btn--continue",
+  "btn--back",
+  "btn--question-back",
+  "btn--question-next",
+  "btn--hint",
+];
 
 const SIZES = [
   "btn--medium",
@@ -9,6 +17,7 @@ const SIZES = [
   "btn-mobile",
   "btn--wide",
   "btn--primary-hover",
+  "btn--question-next-center",
 ];
 
 const COLOR = ["primary", "blue", "red", "green"];

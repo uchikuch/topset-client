@@ -2,22 +2,10 @@ import React from "react";
 import { Button } from "../../components/Button";
 import IconSelect from "../../components/iconSelect/IconSelect";
 
-const subjects = [
-  {
-    id: "1",
-    label: "IGCSE English",
-    iconSrc: "https://topset.ng/wp-content/uploads/2021/03/english-icon.svg",
-  },
-  {
-    id: "2",
-    label: "IGCSE Maths",
-    iconSrc: "https://topset.ng/wp-content/uploads/2021/03/maths-icon.svg",
-  },
-];
-
 export default function StepThree({
   onNext,
   onBack,
+  subjects,
   selectedSubjects,
   setSelectedSubjects,
   error,
@@ -35,7 +23,12 @@ export default function StepThree({
       }
     } else {
       // pushing subject id to array
-      setSelectedSubjects([...selectedSubjects, e.target.id]);
+      subjects.forEach((subject) => {
+        if (subject._id === e.target.id) {
+          setSelectedSubjects([...selectedSubjects, e.target.id]);
+        }
+      });
+      console.log(selectedSubjects);
     }
   };
 
@@ -52,7 +45,7 @@ export default function StepThree({
             <IconSelect
               subject={subject}
               selectorStyle={
-                selectedSubjects.includes(subject.id) ? "selected" : ""
+                selectedSubjects.includes(subject._id) ? "selected" : ""
               }
             />
           </div>

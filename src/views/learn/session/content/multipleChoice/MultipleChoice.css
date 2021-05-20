@@ -1,0 +1,213 @@
+/* MULTIPLE CHOICE */
+.mc-question-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+/* .mc-question-count {
+  margin-bottom: 20px;
+} */
+
+.mc-question-count span {
+  font-size: 28px;
+}
+
+/* .mc-question-text {
+  margin-bottom: 12px;
+} */
+
+.mc-timer-text {
+  background: rgb(230, 153, 12);
+  padding: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 5px solid rgb(255, 189, 67);
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* ANSWERS/RIGHT SECTION */
+.mc-answer-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* OPTION */
+
+.__mc-border {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid #c1afe5;
+  padding: 5px 0px 5px 10px;
+  display: flex;
+  margin-top: 13px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.selected__mc-border {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid #f25b9d;
+  padding: 5px 0px 5px 10px;
+  display: flex;
+  margin-top: 13px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.correct__mc-border {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid var(--correct);
+  padding: 5px 0px 5px 10px;
+  display: flex;
+  margin-top: 13px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.wrong__mc-border {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 3px solid var(--wrong);
+  padding: 5px 0px 5px 10px;
+  display: flex;
+  margin-top: 13px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.__index-container {
+  width: 50px;
+  height: 44px;
+  background-color: #c1afe5;
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px 1px #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Poppins;
+  font-weight: 600 !important;
+  font-size: 21px !important;
+}
+
+.selected__index-container {
+  width: 50px;
+  height: 44px;
+  background-color: #f25b9d;
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px 1px #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Poppins;
+  font-weight: 600 !important;
+  font-size: 21px !important;
+}
+
+.correct__index-container {
+  width: 50px;
+  height: 44px;
+  background-color: var(--correct);
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px 1px #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Poppins;
+  font-weight: 600 !important;
+  font-size: 21px !important;
+}
+
+.wrong__index-container {
+  width: 50px;
+  height: 44px;
+  background-color: var(--wrong);
+  border-radius: 15px;
+  box-shadow: 0px 3px 6px 1px #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Poppins;
+  font-weight: 600 !important;
+  font-size: 21px !important;
+}
+
+.__text-and-checkmark-container {
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px 0 20px;
+  align-items: center;
+}
+
+.__checkmark-item {
+  border: 3px solid #c1afe5;
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+}
+
+.selected__checkmark-item {
+  border: 3px solid #f25b9d;
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: #fae4ed;
+  background-image: url("https://topset.ng/wp-content/uploads/2021/03/pink-checkmark.svg");
+  background-position: center;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+}
+
+.correct__checkmark-item {
+  border: 3px solid var(--correct);
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: #e7fdef;
+  background-image: url("https://topset.ng/wp-content/uploads/2021/05/green-tick.svg");
+  background-position: center;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+}
+
+.wrong__checkmark-item {
+  border: 3px solid var(--wrong);
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: #fae4ed;
+  background-image: url("https://topset.ng/wp-content/uploads/2021/05/Fill-4.svg");
+  background-position: center;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-size: 17px 17px;
+}
+
+.__mc-option-text {
+  height: auto;
+  margin-top: 2px;
+  display: flex;
+  font-family: Poppins;
+  color: var(--primary) !important;
+  font-size: 20px !important;
+  font-weight: 520;
+  justify-content: start;
+  align-items: start;
+}

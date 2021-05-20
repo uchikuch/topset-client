@@ -27,7 +27,6 @@ export default function StepFour({
   };
 
   const validateEmail = ({ target }) => {
-    console.log("validateEmail: ");
     setLoading(true);
     setSuccess("");
     setError("");
@@ -35,7 +34,6 @@ export default function StepFour({
       .post(`${server.url}/validateEmail`, { email: target.value })
       .then((response) => {
         if (response.data.success) {
-          console.log(response);
           setLoading(false);
           setError("");
           setSuccess(response.data.success);
@@ -55,6 +53,7 @@ export default function StepFour({
         <h2 className="__reduceMarginBottom has-text-centered">
           Let’s create an account for you
         </h2>
+        <h3>Your personal information will not be visible to the public</h3>
       </div>
       {/* Form */}
 
@@ -193,7 +192,7 @@ export default function StepFour({
                   onChange={handleChange}
                   name="password"
                   value={values.password}
-                  placeholder="Passowrd"
+                  placeholder="Password"
                 />
               </div>
             </div>

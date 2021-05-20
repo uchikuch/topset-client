@@ -6,6 +6,8 @@
   --purpleMedium: #6e559e;
   --deepYellow: #fd9f27;
   --signoutRed: #ff6c6c;
+  --correct: #08aa46;
+  --wrong: #fd4635;
 }
 
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
@@ -62,6 +64,7 @@ h6 {
   font-weight: 600 !important;
   font-size: 20px !important;
   color: var(--purpleMedium) !important;
+  margin-left: 3px;
 }
 
 .h9 {
@@ -121,6 +124,35 @@ input:focus {
   top: 50%;
   margin-left: -50px;
   margin-top: -150px;
+}
+.__text_404 {
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.__image_404 {
+  max-width: 400px;
+  padding: 20px;
+  margin: auto;
+}
+
+.__go_home_404 {
+  background-color: var(--secondary);
+  border-color: var(--purpleLight) !important;
+  border-radius: 15px !important;
+  font-family: Poppins;
+  color: white !important;
+  height: 50px !important;
+  max-width: 200px;
+  font-size: 18px !important;
+  margin: 20px auto;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.__go_home_404:hover {
+  background-color: var(--primary);
 }
 
 @media screen and (max-width: 500px) {

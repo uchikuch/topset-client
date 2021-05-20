@@ -77,8 +77,8 @@ export default function StepTwo({
       {/* Intro text */}
       <div className="__heading-box">
         <h2 className="__reduceMarginBottom">
-          Alright <span className="__username">{username}</span>, let's set you
-          an avatar
+          Alright <span className="__username">{username}</span>, let's pick an
+          avatar
         </h2>
       </div>
       {/* Selected Avatar */}

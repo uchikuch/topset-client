@@ -61,7 +61,8 @@ function Login() {
                   type: "SET_USER",
                   user: data.user,
                 });
-                history.push("/");
+                // history.push("/");
+                window.location.reload();
               }
             } catch (error) {
               console.log("caught error: ", error);

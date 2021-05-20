@@ -8,13 +8,13 @@ export default function IconSelect({ subject, selectorStyle }) {
 
   return (
     <div>
-      <div id={subject.id} className={`${checkStyle}__main-border`}>
+      <div id={subject._id} className={`${checkStyle}__main-border`}>
         <div
           className={`${checkStyle}__icon-container`}
           style={{ pointerEvents: "none" }}
         >
           <img
-            src={subject.iconSrc}
+            src={subject.icon_src}
             alt="subject icon"
             height="37px"
             width="37px"

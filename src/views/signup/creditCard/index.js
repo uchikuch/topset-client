@@ -53,8 +53,8 @@ export default function CreditCard({
         <h3>No commitments, cancel online at any time</h3>
         <div className="has-text-centered __marginTop-15">
           <span>
-            Cancel before {moment().add(7, "days").calendar()} to not get
-            charged
+            Cancel before {moment().add(7, "days").format("DD/MM/YYYY")} to not
+            get charged
           </span>
         </div>
       </div>

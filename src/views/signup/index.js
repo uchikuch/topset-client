@@ -11,10 +11,14 @@ import CreditCard from "./creditCard/index";
 
 import server from "../../configs/Urls";
 
+import GetAvatarsAndSubjects from "../../queries/GetAvatarsAndSubjects";
+
 export default function SignUp() {
+  const { loading, data } = GetAvatarsAndSubjects();
   let history = useHistory();
   const [activeStep, setActiveStep] = useState(0);
   const [username, setUsername] = useState("");
+  const [subjectDetails, setSubjectDetails] = useState([]);
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   const [userDetails, setUserDetails] = useState({});
   const [error, setError] = useState("");
@@ -27,10 +31,14 @@ export default function SignUp() {
   const [cardName, setCardName] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
+  const exam_id = "6055d05f0c8e40088287ec73";
 
   useEffect(() => {
-    setActiveStep(0);
-  }, []);
+    if (data) {
+      setActiveStep(0);
+      setSubjectDetails(data.subjects);
+    }
+  }, [data]);
 
   const handleNext = () => {
     if (activeStep === 2 && selectedSubjects.length === 0) {
@@ -43,12 +51,28 @@ export default function SignUp() {
     }
     if (activeStep === 4) {
       console.log("Get to work: ", chosenPlan);
+      // let objectSubjects = [];
+      // selectedSubjects.forEach((subject) => {
+      //   subjectDetails.forEach((subjectDetail) => {
+      //     if (subject === subjectDetail._id) {
+      //       objectSubjects.push({
+      //         subject_id: subjectDetail._id,
+      //         active: {
+      //           topic_id: "",
+      //           section_id: "",
+      //           lesson_id: "",
+      //         },
+      //       });
+      //     }
+      //   });
+      // });
       const user_data = {
         username,
         firstname: userDetails.firstName,
         lastname: userDetails.lastName,
         email: userDetails.email,
         password: userDetails.password,
+        exam_id,
         avatar,
         subjects: selectedSubjects,
         plan: chosenPlan,
@@ -119,6 +143,7 @@ export default function SignUp() {
           selectedSubjects={selectedSubjects}
           error={error}
           setError={setError}
+          subjects={subjectDetails}
           setSelectedSubjects={setSelectedSubjects}
         />
       )}

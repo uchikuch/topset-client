@@ -18,6 +18,8 @@
   font-family: Poppins;
   font-weight: 600;
   font-size: 25px !important;
+  margin: 0 auto;
+  display: block;
 }
 
 .btn--primary:hover {
@@ -49,6 +51,42 @@
   font-family: Poppins;
   font-weight: 600;
   font-size: 23px !important;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn--question-back {
+  background-color: transparent;
+  color: var(--primary);
+  /* padding: 8px 20px; */
+  border: 1px solid var(--primary);
+  border-radius: 15px;
+  height: 50px;
+  transition: all 0.3s ease-out;
+  box-shadow: 1px 1px 3px var(--primary);
+  width: 100%;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 23px !important;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn--hint {
+  background-color: transparent;
+  color: var(--secondary);
+  /* padding: 8px 20px; */
+  border: 1px solid var(--secondary);
+  border-radius: 15px;
+  height: 50px;
+  transition: all 0.3s ease-out;
+  box-shadow: 1px 1px 3px var(--secondary);
+  width: 100%;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 23px !important;
+  margin: 0 auto;
+  display: block;
 }
 
 .btn--medium {
@@ -74,7 +112,19 @@
   transition: all 0.3s ease-out;
 }
 
-.btn--primary-hover{
+.btn--primary-hover {
+  text-align: center;
+  border-radius: 4px;
+  width: 80%;
+  text-decoration: none;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: all 0.3s ease-out;
+}
+
+.btn--question-next-center {
   text-align: center;
   border-radius: 4px;
   width: 80%;
@@ -95,10 +145,36 @@
   font-family: Poppins;
   font-weight: 600;
   font-size: 23px !important;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn--question-next {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 18px;
+  height: 50px;
+  width: 100%;
+  font-family: Poppins;
+  font-weight: 600;
+  font-size: 23px !important;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn--question-next:disabled {
+  background-color: #999999;
+  color: #ffffff;
+  cursor: default;
 }
 
 .btn--continue:hover {
   background-color: var(--primary);
+  transition: all 0.3s ease-out;
+}
+
+.btn--question-next:hover:enabled {
+  background-color: var(--secondary);
   transition: all 0.3s ease-out;
 }
 
@@ -116,7 +192,22 @@
   box-shadow: none;
 }
 
-.btn--primary-hover:hover{
+.btn--hint:hover {
+  transition: all 0.3s ease-out;
+  background: var(--secondary);
+  color: white;
+  box-shadow: none;
+}
+
+.btn--question-back:hover {
+  transition: all 0.3s ease-out;
+  background: var(--purpleMedium);
+  color: white;
+  border-color: var(--purpleMedium);
+  box-shadow: none;
+}
+
+.btn--primary-hover:hover {
   transition: all 0.3s ease-out;
   background: var(--primary);
   color: white;
