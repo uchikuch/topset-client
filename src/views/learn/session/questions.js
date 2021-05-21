@@ -25,6 +25,36 @@ const questions = [
     ],
   },
   {
+    questionText: "What was the name of your first dog",
+    type: "multiple_choice",
+    answerOptions: [
+      { answerText: "Jadie", isCorrect: false, index: "A" },
+      { answerText: "Maxwell", isCorrect: false, index: "B" },
+      { answerText: "Sheeva", isCorrect: false, index: "C" },
+      { answerText: "Brandy", isCorrect: true, index: "D" },
+    ],
+  },
+  {
+    questionText: "Who is CEO of Mobimedia?",
+    type: "multiple_choice",
+    answerOptions: [
+      { answerText: "Rotimi Thomas", isCorrect: true, index: "A" },
+      { answerText: "Uche Azinge", isCorrect: false, index: "B" },
+      { answerText: "Femi Thomas", isCorrect: false, index: "C" },
+      { answerText: "Olusola Dosekun", isCorrect: false, index: "D" },
+    ],
+  },
+  {
+    questionText: "Which of these is a back-end framework",
+    type: "multiple_choice",
+    answerOptions: [
+      { answerText: "ReactJS", isCorrect: false, index: "A" },
+      { answerText: "VueJS", isCorrect: false, index: "B" },
+      { answerText: "AngularJS", isCorrect: false, index: "C" },
+      { answerText: "NodeJS", isCorrect: true, index: "D" },
+    ],
+  },
+  {
     questionText: "The iPhone was created by which company?",
     answerOptions: [
       { answerText: "Apple", isCorrect: true },

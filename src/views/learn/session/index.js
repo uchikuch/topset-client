@@ -11,6 +11,7 @@ export default function ClassRoom() {
   );
   const [nextButtonDisabledPropoerty, setNextButtonDisabledPropoerty] =
     useState(true);
+  const [answerdQuestions, setAnsweredQuestions] = useState([]);
   const [lessonComplete, setLessonComplete] = useState(false);
 
   const onBack = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MultipleChoice.css";
 import Option from "./option/Option";
 
@@ -7,23 +7,74 @@ export default function MultipleChoice({
   setNextButtonDisabledPropoerty,
 }) {
   const [selectedOption, setSelectedOption] = useState("");
-  const [wrongOptionSelected, setWrongOptionSelected] = useState("");
+  /* selectedOption variable holds the option object that the user selects 
+      for each question. It is cleared after each question render  */
+  const [answeredQuestions, setAnsweredQuestions] = useState([]);
+  /* answeredQuestions holds an array of the options selected for each question.
+      This is used to persist the user's response for the duration of the session */
+  const [currentQuestionProps, setCurrentQuestionProps] = useState("");
+  /* currentQuestionProps identifies the option selected from the 
+      answeredQuestions array depending on the current question */
+  const [questionAnsweredStatus, setQuestionAnsweredStatus] = useState(false);
+  /* for each question the questionAnseredStatus returns a boolean value
+      indicating whether the question has been aswered by the user or not.
+      This value is used to determine the styling of the answer options */
 
-  const correctAnswer = currentQuestion.answerOptions.find((answer) => {
+  const CurrentQuestionAnswer = currentQuestion.answerOptions.find((answer) => {
     return answer.isCorrect === true;
   });
+  /* The CurrentQuestionAnswer variable stores the correct answer for the current 
+        question, to be used later to compare with the user's selected option */
 
-  const optionSelected = (option) => {
+  useEffect(async () => {
+    // Disable continue button then initaite checks
+    setNextButtonDisabledPropoerty(true);
+
+    // Reset questionAnsweredStatus to false then initaite check
+    await setQuestionAnsweredStatus(false);
+
+    // Reset selectedOption to nothing then initiate check
+    await setSelectedOption("");
+
+    /* Determine whether the current question has been answered by the user 
+        Do this by comparing the currentQuestion with elements in the 
+        answeredQuestions array*/
+    const questionAnswered = await answeredQuestions.find((question) => {
+      return question.questionText === currentQuestion.questionText;
+    });
+
+    /* Update questionAnsweredStatus & currentQuestionProps if question has
+        already been answred */
+    if (questionAnswered) {
+      setQuestionAnsweredStatus(true);
+      setCurrentQuestionProps(questionAnswered);
+      setNextButtonDisabledPropoerty(false);
+    }
+  }, [answeredQuestions, currentQuestion]);
+
+  const handleOptionSelected = (option) => {
     // disallow multi select
     if (selectedOption) {
       return;
     }
-    // set selected option
+
+    let questionProps = {
+      questionText: currentQuestion.questionText,
+      correctAnswer: CurrentQuestionAnswer,
+      selectedOption: option,
+    };
+
+    // set user's option as selected option
     setSelectedOption(option);
+
     // check if selected option is wrong
-    if (option !== correctAnswer) {
-      setWrongOptionSelected(option);
+    if (option !== CurrentQuestionAnswer) {
+      questionProps.wrongOptionSelected = option;
     }
+
+    setQuestionAnsweredStatus(true);
+    setAnsweredQuestions([...answeredQuestions, questionProps]);
+
     // enable next button
     setNextButtonDisabledPropoerty(false);
   };
@@ -51,25 +102,27 @@ export default function MultipleChoice({
               <div
                 id={currentQuestion.answerOptions.indexOf(option)}
                 key={currentQuestion.answerOptions.indexOf(option)}
-                onClick={() => optionSelected(option)}
+                onClick={() => handleOptionSelected(option)}
               >
-                <Option
-                  option={option}
-                  // selectorStyle={
-                  //   selectedSubjects.includes(option._id) ? "selected" : ""
-                  // }
-                  selectorStyle={
-                    option === selectedOption
-                      ? option === correctAnswer
-                        ? "correct"
-                        : "wrong"
-                      : selectedOption
-                      ? option === correctAnswer
+                {/* if the question has been answered, use the saved response to style 
+                the options accordingly. Otherwise use default options style  */}
+                {questionAnsweredStatus ? (
+                  <Option
+                    option={option}
+                    selectorStyle={
+                      option === currentQuestionProps.selectedOption
+                        ? currentQuestionProps.selectedOption ===
+                          CurrentQuestionAnswer
+                          ? "correct"
+                          : "wrong"
+                        : option === CurrentQuestionAnswer
                         ? "correct"
                         : ""
-                      : ""
-                  }
-                />
+                    }
+                  />
+                ) : (
+                  <Option option={option} selectorStyle={""} />
+                )}
               </div>
             ))}
           </div>
