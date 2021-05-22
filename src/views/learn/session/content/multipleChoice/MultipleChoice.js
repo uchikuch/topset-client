@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./MultipleChoice.css";
 import Option from "./option/Option";
 
 export default function MultipleChoice({
   currentQuestion,
+  selectedOption,
+  setSelectedOption,
+  onCorrect,
+  onCloseCorrect,
+  onIncorrect,
+  onCloseHint,
+  answeredQuestions,
+  setHintButtonDisabledPropoerty,
   setNextButtonDisabledPropoerty,
+  setAnsweredQuestions,
+  currentQuestionProps,
+  setCurrentQuestionProps,
+  questionAnsweredStatus,
+  setQuestionAnsweredStatus,
 }) {
-  const [selectedOption, setSelectedOption] = useState("");
-  /* selectedOption variable holds the option object that the user selects 
-      for each question. It is cleared after each question render  */
-  const [answeredQuestions, setAnsweredQuestions] = useState([]);
-  /* answeredQuestions holds an array of the options selected for each question.
-      This is used to persist the user's response for the duration of the session */
-  const [currentQuestionProps, setCurrentQuestionProps] = useState("");
-  /* currentQuestionProps identifies the option selected from the 
-      answeredQuestions array depending on the current question */
-  const [questionAnsweredStatus, setQuestionAnsweredStatus] = useState(false);
-  /* for each question the questionAnseredStatus returns a boolean value
-      indicating whether the question has been aswered by the user or not.
-      This value is used to determine the styling of the answer options */
-
   const CurrentQuestionAnswer = currentQuestion.answerOptions.find((answer) => {
     return answer.isCorrect === true;
   });
@@ -29,6 +28,12 @@ export default function MultipleChoice({
   useEffect(async () => {
     // Disable continue button then initaite checks
     setNextButtonDisabledPropoerty(true);
+
+    // Disable hint button then initaite checks
+    setHintButtonDisabledPropoerty(true);
+
+    // set incorrect answer to false then initaite checks
+    // onIncorrect(false);
 
     // Reset questionAnsweredStatus to false then initaite check
     await setQuestionAnsweredStatus(false);
@@ -43,12 +48,24 @@ export default function MultipleChoice({
       return question.questionText === currentQuestion.questionText;
     });
 
+    // check if unanswered question has available hint
+    if (!questionAnswered) {
+      if (currentQuestion.hint) {
+        setTimeout(function () {
+          setHintButtonDisabledPropoerty(false);
+        }, 10000);
+      }
+    }
+
     /* Update questionAnsweredStatus & currentQuestionProps if question has
         already been answred */
     if (questionAnswered) {
       setQuestionAnsweredStatus(true);
       setCurrentQuestionProps(questionAnswered);
       setNextButtonDisabledPropoerty(false);
+      // if (questionAnswered.wrongOptionSelected) {
+      //   onIncorrect(true);
+      // }
     }
   }, [answeredQuestions, currentQuestion]);
 
@@ -70,6 +87,15 @@ export default function MultipleChoice({
     // check if selected option is wrong
     if (option !== CurrentQuestionAnswer) {
       questionProps.wrongOptionSelected = option;
+      onCloseHint();
+      onIncorrect(true);
+    } else {
+      console.log("correct");
+      onCloseHint();
+      onCorrect(true);
+      setTimeout(function () {
+        onCloseCorrect();
+      }, 3000);
     }
 
     setQuestionAnsweredStatus(true);
@@ -104,8 +130,9 @@ export default function MultipleChoice({
                 key={currentQuestion.answerOptions.indexOf(option)}
                 onClick={() => handleOptionSelected(option)}
               >
-                {/* if the question has been answered, use the saved response to style 
-                the options accordingly. Otherwise use default options style  */}
+                {/* OPTION COMPONENT STYLING: if the question has been answered, use the 
+                saved response to style the options accordingly. Otherwise use default 
+                options style  */}
                 {questionAnsweredStatus ? (
                   <Option
                     option={option}

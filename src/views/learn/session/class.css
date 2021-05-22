@@ -1,19 +1,27 @@
 .main-session-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 5%;
+  height: 80vh;
+  /* padding-top: 5%; */
 }
 
 .question-and-navs {
+  display: flex;
+  justify-content: center;
   padding: 0 10px;
-  width: 580px;
+  max-width: 700px;
+  /* max-width: 580px; */
 }
 
 .question-nav-buttons {
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
+  max-width: 700px;
+  position: fixed;
+  bottom: 20px;
 }
 
 .session-question-back-btn {

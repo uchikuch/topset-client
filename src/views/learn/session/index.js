@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Button } from "../../../components/Button";
 import Content from "./content/content";
 import questions from "./questions";
+import HintModal from "./modals/hint/HintModal";
+import IncorrectModal from "./modals/incorrect/IncorrectModal";
+import CorrectModal from "./modals/correct/CorrectModal";
 import "./class.css";
 
 export default function ClassRoom() {
@@ -11,8 +14,12 @@ export default function ClassRoom() {
   );
   const [nextButtonDisabledPropoerty, setNextButtonDisabledPropoerty] =
     useState(true);
-  const [answerdQuestions, setAnsweredQuestions] = useState([]);
+  const [hintButtonDisabledPropoerty, setHintButtonDisabledPropoerty] =
+    useState(true);
   const [lessonComplete, setLessonComplete] = useState(false);
+  const [hintIsOpen, setHintIsOpen] = useState(false);
+  const [incorrectIsOpen, setIncorrectIsOpen] = useState(false);
+  const [correctIsOpen, setCorrectIsOpen] = useState(false);
 
   const onBack = () => {
     const nextIndex = currentIndex - 1;
@@ -37,12 +44,32 @@ export default function ClassRoom() {
   };
 
   const onHint = () => {
-    const nextIndex = currentIndex + 1;
-    if (nextIndex < questions.length) {
-      setCurrentQuestion(questions[nextIndex]);
-    } else {
-      setLessonComplete(true);
-    }
+    // open hint modal
+    setHintIsOpen(!hintIsOpen);
+  };
+
+  const onCloseHint = () => {
+    setHintIsOpen(false);
+  };
+
+  const onIncorrect = (value) => {
+    // open hint modal
+    setIncorrectIsOpen(value);
+  };
+
+  const onCloseIncorrect = () => {
+    setIncorrectIsOpen(false);
+    onNext();
+  };
+
+  const onCorrect = (value) => {
+    // open hint modal
+    setCorrectIsOpen(value);
+  };
+
+  const onCloseCorrect = () => {
+    setCorrectIsOpen(false);
+    onNext();
   };
 
   return (
@@ -55,43 +82,62 @@ export default function ClassRoom() {
             <div>
               <Content
                 currentQuestion={currentQuestion}
+                onCorrect={onCorrect}
+                onCloseCorrect={onCloseCorrect}
+                onIncorrect={onIncorrect}
+                onCloseHint={onCloseHint}
+                setHintButtonDisabledPropoerty={setHintButtonDisabledPropoerty}
                 setNextButtonDisabledPropoerty={setNextButtonDisabledPropoerty}
               />
             </div>
-            <div className="question-nav-buttons">
-              <div className="session-question-back-btn">
-                <Button
-                  type="submit"
-                  buttonStyle="btn--question-back"
-                  buttonSize="btn--mobile"
-                  onClick={onBack}
-                >
-                  Back
-                </Button>
-              </div>
-              <div className="session-question-continue-btn">
-                <Button
-                  type="button"
-                  buttonStyle="btn--question-next"
-                  buttonSize="btn--question-next-center"
-                  onClick={onNext}
-                  disabled={nextButtonDisabledPropoerty}
-                >
-                  Continue
-                </Button>
-              </div>
-              <div className="session-question-hint-btn">
-                <Button
-                  type="submit"
-                  buttonStyle="btn--hint"
-                  buttonSize="btn--mobile"
-                  onClick={onHint}
-                >
-                  Hint
-                </Button>
-              </div>
+          </div>
+          <div className="question-nav-buttons">
+            <div className="session-question-back-btn">
+              <Button
+                type="submit"
+                buttonStyle="btn--question-back"
+                buttonSize="btn--mobile"
+                onClick={onBack}
+              >
+                Back
+              </Button>
+            </div>
+            <div className="session-question-continue-btn">
+              <Button
+                type="button"
+                buttonStyle="btn--question-next"
+                buttonSize="btn--question-next-center"
+                onClick={onNext}
+                disabled={nextButtonDisabledPropoerty}
+              >
+                Continue
+              </Button>
+            </div>
+            <div className="session-question-hint-btn">
+              <Button
+                type="submit"
+                buttonStyle="btn--hint"
+                buttonSize="btn--mobile"
+                onClick={onHint}
+                disabled={hintButtonDisabledPropoerty}
+              >
+                Hint
+              </Button>
             </div>
           </div>
+          <HintModal hintIsOpen={hintIsOpen} onCloseHint={onCloseHint}>
+            {currentQuestion.hint}
+          </HintModal>
+          <IncorrectModal
+            incorrectIsOpen={incorrectIsOpen}
+            onCloseIncorrect={onCloseIncorrect}
+          >
+            {currentQuestion.feedback}
+          </IncorrectModal>
+          <CorrectModal
+            correctIsOpen={correctIsOpen}
+            onCloseCorrect={onCloseCorrect}
+          />
         </div>
       )}
     </div>

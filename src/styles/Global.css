@@ -6,8 +6,9 @@
   --purpleMedium: #6e559e;
   --deepYellow: #fd9f27;
   --signoutRed: #ff6c6c;
-  --correct: #08aa46;
+  --correct: #7cb24c;
   --wrong: #fd4635;
+  --disabled: #e2dced;
 }
 
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";

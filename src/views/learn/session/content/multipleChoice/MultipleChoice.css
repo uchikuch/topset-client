@@ -167,7 +167,7 @@
   height: 35px;
   border-radius: 25px;
   background-color: #fae4ed;
-  background-image: url("https://topset.ng/wp-content/uploads/2021/03/pink-checkmark.svg");
+  background-image: url("../../../../../assets/pink-checkmark.svg");
   background-position: center;
   padding: 10px;
   background-repeat: no-repeat;
@@ -180,7 +180,7 @@
   height: 35px;
   border-radius: 25px;
   background-color: #e7fdef;
-  background-image: url("https://topset.ng/wp-content/uploads/2021/05/green-tick.svg");
+  background-image: url("../../../../../assets/green-check.svg");
   background-position: center;
   padding: 10px;
   background-repeat: no-repeat;
@@ -193,7 +193,7 @@
   height: 35px;
   border-radius: 25px;
   background-color: #fae4ed;
-  background-image: url("https://topset.ng/wp-content/uploads/2021/05/Fill-4.svg");
+  background-image: url("../../../../../assets/red-ex.svg");
   background-position: center;
   padding: 10px;
   background-repeat: no-repeat;

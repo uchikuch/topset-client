@@ -1,0 +1,41 @@
+.hint_modal_container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  height: 0px;
+  background-color: #fff;
+  padding: 10px;
+  z-index: 1000;
+  width: 100vw;
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.hint_modal_width {
+  max-width: 700px;
+}
+
+.hint_modal_heading {
+  display: flex;
+  justify-content: flex-start;
+  font-family: Poppins;
+  font-weight: 960 !important;
+  font-size: 26px !important;
+  color: var(--wrong) !important;
+}
+
+.hint_modal_text {
+  display: flex;
+  justify-content: center;
+  font-family: Poppins;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  color: var(--purpleMedium) !important;
+}
+
+.hint_modal_button_div {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}

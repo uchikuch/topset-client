@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useStateValue } from "../../../StateProvider";
 import SplashScreen from "../../../components/SplashScreen";
 import GetUserSubjects from "../../../queries/GetUserSubjects";

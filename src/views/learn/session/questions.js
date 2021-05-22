@@ -1,6 +1,7 @@
 const questions = [
   {
-    questionText: "What is the capital of France?",
+    questionText:
+      "What is the capital of France? They have a football team whose kit colored red, blue and white",
     type: "multiple_choice",
     answerOptions: [
       {
@@ -13,6 +14,7 @@ const questions = [
       { answerText: "Dublin", isCorrect: false, index: "D" },
     ],
     hint: "They have a football team whose kit colored red, blue and white. Also Jay Jay Okocha once played for the said football team.",
+    feedback: "The Eiffel Tower resides here",
   },
   {
     questionText: "Who is CEO of Tesla?",
