@@ -1,0 +1,83 @@
+.session-header-container {
+  margin-top: -6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 960px;
+  padding: 0 10px;
+}
+
+progress {
+  background-color: #f3edff;
+  border: 0;
+  height: 18px;
+  border-radius: 20px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #f3edff;
+  border: 0;
+  height: 18px;
+  border-radius: 20px;
+}
+progress::-webkit-progress-value {
+  background-color: var(--purpleMedium);
+  border: 0;
+  height: 18px;
+  border-radius: 20px;
+}
+
+.session-progress {
+  width: 45rem;
+  margin-bottom: 20px;
+}
+
+.session-close {
+  cursor: pointer;
+}
+
+.session-close-and-rewards-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.completion-reward {
+  display: flex;
+  align-items: center;
+}
+
+.completion-reward-text {
+  text-align: right;
+  font-family: Poppins;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  color: var(--purpleLight) !important;
+  line-height: 13pt;
+  margin-top: -7px;
+}
+
+@media screen and (max-width: 740px) {
+  .session-progress {
+    width: 95vw;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .session-header-container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1215px) {
+  .session-header-container {
+    width: 1152px;
+  }
+}
+
+@media screen and (min-width: 1407px) {
+  .session-header-container {
+    width: 1344px;
+  }
+}

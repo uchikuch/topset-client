@@ -1,7 +1,7 @@
 import React from "react";
-import "./splashScreen.css";
+import "./loadingScreen.css";
 import Lottie from "react-lottie";
-import * as rocketAnimation from "../assets/rocket-launch.json";
+import * as rocketAnimation from "../../assets/rocket-launch.json";
 
 export default function SplashScreen() {
   const rocketAnimationOptions = {
@@ -15,7 +15,7 @@ export default function SplashScreen() {
 
   return (
     <div className="loding-screen-main-contaner">
-      <div className="loading-screen-animation-div">
+      <div>
         <Lottie options={rocketAnimationOptions} width={250} />
       </div>
     </div>

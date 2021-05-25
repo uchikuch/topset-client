@@ -4,12 +4,12 @@ import correct from "../../../../../assets/correct.gif";
 import "./correct.css";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie";
-import * as animationData from "./check-mark.json";
+import * as animationData from "./thumbs-up.json";
 
 export default function HintModal({ correctIsOpen, onCloseCorrect }) {
   if (!correctIsOpen) return null;
 
-  const defaultOptions = {
+  const lottieOptions = {
     loop: false,
     autoplay: true,
     animationData: animationData.default,
@@ -19,9 +19,11 @@ export default function HintModal({ correctIsOpen, onCloseCorrect }) {
   };
 
   return ReactDom.createPortal(
-    <motion.div className="hint_modal_container" animate={{ height: "auto" }}>
-      {/* <img src={correct} alt="" width="150px" /> */}
-      <Lottie options={defaultOptions} width={150} />
+    <motion.div
+      className="correct_modal_container"
+      animate={{ height: "auto" }}
+    >
+      <Lottie options={lottieOptions} width={150} />
     </motion.div>,
     document.getElementById("portal")
   );

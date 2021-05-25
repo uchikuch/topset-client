@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { Button } from "../../../components/Button";
+import Header from "./header/Header";
 import Content from "./content/content";
 import questions from "./questions";
 import HintModal from "./modals/hint/HintModal";
 import IncorrectModal from "./modals/incorrect/IncorrectModal";
 import CorrectModal from "./modals/correct/CorrectModal";
+import Lottie from "react-lottie";
+import * as animationData from "../../../assets/topset-bubbles.json";
 import "./class.css";
 
 export default function ClassRoom() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [lessonProgress, setLessonProgress] = useState(0.2);
   const [currentQuestion, setCurrentQuestion] = useState(
     questions[currentIndex]
   );
@@ -20,6 +24,15 @@ export default function ClassRoom() {
   const [hintIsOpen, setHintIsOpen] = useState(false);
   const [incorrectIsOpen, setIncorrectIsOpen] = useState(false);
   const [correctIsOpen, setCorrectIsOpen] = useState(false);
+
+  const lottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   const onBack = () => {
     const nextIndex = currentIndex - 1;
@@ -34,9 +47,16 @@ export default function ClassRoom() {
 
   const onNext = () => {
     const nextIndex = currentIndex + 1;
-    console.log("next clicked", nextIndex);
+
+    if (nextIndex > lessonProgress) {
+      setLessonProgress(nextIndex);
+    }
+
+    setIncorrectIsOpen(false);
+
     if (nextIndex < questions.length) {
       setCurrentIndex(nextIndex);
+      console.log("currentIndex", currentIndex);
       setCurrentQuestion(questions[nextIndex]);
     } else {
       setLessonComplete(true);
@@ -58,7 +78,6 @@ export default function ClassRoom() {
   };
 
   const onCloseIncorrect = () => {
-    setIncorrectIsOpen(false);
     onNext();
   };
 
@@ -78,6 +97,10 @@ export default function ClassRoom() {
         <div>Lesson Complete</div>
       ) : (
         <div className="main-session-container">
+          <Header
+            lessonProgress={lessonProgress}
+            questionLength={questions.length}
+          />
           <div className="question-and-navs">
             <div>
               <Content
@@ -123,6 +146,15 @@ export default function ClassRoom() {
               >
                 Hint
               </Button>
+              <div
+                className="hint-bubbles"
+                style={{
+                  display: hintButtonDisabledPropoerty ? "none" : "block",
+                  pointerEvents: "none",
+                }}
+              >
+                <Lottie options={lottieOptions} width={150} />
+              </div>
             </div>
           </div>
           <HintModal hintIsOpen={hintIsOpen} onCloseHint={onCloseHint}>

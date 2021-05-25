@@ -14,7 +14,8 @@ const questions = [
       { answerText: "Dublin", isCorrect: false, index: "D" },
     ],
     hint: "They have a football team whose kit colored red, blue and white. Also Jay Jay Okocha once played for the said football team.",
-    feedback: "The Eiffel Tower resides here",
+    feedback:
+      "A flat in Paris was left unoccupied under lock and key for 70 years, but the rent was paid every month; when the renter passed away, a painting by Boldini valued at more than $2 million was found inside.",
   },
   {
     questionText: "Who is CEO of Tesla?",
@@ -37,13 +38,13 @@ const questions = [
     ],
   },
   {
-    questionText: "Who is CEO of Mobimedia?",
+    questionText: "How many Harry Potter books are there?",
     type: "multiple_choice",
     answerOptions: [
-      { answerText: "Rotimi Thomas", isCorrect: true, index: "A" },
-      { answerText: "Uche Azinge", isCorrect: false, index: "B" },
-      { answerText: "Femi Thomas", isCorrect: false, index: "C" },
-      { answerText: "Olusola Dosekun", isCorrect: false, index: "D" },
+      { answerText: "1", isCorrect: false, index: "A" },
+      { answerText: "4", isCorrect: false, index: "B" },
+      { answerText: "6", isCorrect: false, index: "C" },
+      { answerText: "7", isCorrect: true, index: "D" },
     ],
   },
   {
@@ -58,20 +59,12 @@ const questions = [
   },
   {
     questionText: "The iPhone was created by which company?",
+    type: "multiple_choice",
     answerOptions: [
-      { answerText: "Apple", isCorrect: true },
-      { answerText: "Intel", isCorrect: false },
-      { answerText: "Amazon", isCorrect: false },
-      { answerText: "Microsoft", isCorrect: false },
-    ],
-  },
-  {
-    questionText: "How many Harry Potter books are there?",
-    answerOptions: [
-      { answerText: "1", isCorrect: false },
-      { answerText: "4", isCorrect: false },
-      { answerText: "6", isCorrect: false },
-      { answerText: "7", isCorrect: true },
+      { answerText: "Apple", isCorrect: true, index: "A" },
+      { answerText: "Intel", isCorrect: false, index: "B" },
+      { answerText: "Amazon", isCorrect: false, index: "C" },
+      { answerText: "Microsoft", isCorrect: false, index: "D" },
     ],
   },
 ];

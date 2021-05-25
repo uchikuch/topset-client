@@ -53,7 +53,7 @@ export default function MultipleChoice({
       if (currentQuestion.hint) {
         setTimeout(function () {
           setHintButtonDisabledPropoerty(false);
-        }, 10000);
+        }, 8000);
       }
     }
 
